@@ -26,5 +26,6 @@ public class GNDgame {
         
         window.setLocationRelativeTo(null);
         window.setVisible(true);
+        gamePanel.startGameThread();
     }
 }
