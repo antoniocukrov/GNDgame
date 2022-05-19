@@ -21,10 +21,11 @@ public class Player extends Entity {
 
     GamePanel gp;
     KeyHandler keyH;
-
+    
     public final int screenX;
     public final int screenY;
     int hasKey=0;
+    int spriteSwitch=0;
 
     public Player(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
@@ -54,15 +55,18 @@ public class Player extends Entity {
 
     public void getPlayerImage() {
         try {
-
-            up1 = ImageIO.read(getClass().getResourceAsStream("/player/boy_up_1.png"));
-            up2 = ImageIO.read(getClass().getResourceAsStream("/player/boy_up_2.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("/player/boy_down_1.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("/player/boy_down_2.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("/player/boy_left_1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("/player/boy_left_2.png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream("/player/boy_right_1.png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream("/player/boy_right_2.png"));
+            up0 = ImageIO.read(getClass().getResourceAsStream("/player/mage_up_0.png"));
+            up1 = ImageIO.read(getClass().getResourceAsStream("/player/mage_up_1.png"));
+            up2 = ImageIO.read(getClass().getResourceAsStream("/player/mage_up_2.png"));
+            down0 = ImageIO.read(getClass().getResourceAsStream("/player/mage_down_0.png"));
+            down1 = ImageIO.read(getClass().getResourceAsStream("/player/mage_down_1.png"));
+            down2 = ImageIO.read(getClass().getResourceAsStream("/player/mage_down_2.png"));
+            left0 = ImageIO.read(getClass().getResourceAsStream("/player/mage_left_0.png"));
+            left1 = ImageIO.read(getClass().getResourceAsStream("/player/mage_left_1.png"));
+            left2 = ImageIO.read(getClass().getResourceAsStream("/player/mage_left_2.png"));
+            right0 = ImageIO.read(getClass().getResourceAsStream("/player/mage_right_0.png"));
+            right1 = ImageIO.read(getClass().getResourceAsStream("/player/mage_right_1.png"));
+            right2 = ImageIO.read(getClass().getResourceAsStream("/player/mage_right_2.png"));
 
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -117,13 +121,18 @@ public class Player extends Entity {
                 if (spriteNum == 1) {
                     spriteNum = 2;
                 } else if (spriteNum == 2) {
+                    spriteNum = 3;
+                } else if (spriteNum == 3) {
+                    spriteNum = 4;
+                } else if (spriteNum == 4){
                     spriteNum = 1;
                 }
                 spriteCounter = 0;
+                    System.out.println(spriteNum);
             }
         }
-
-    }
+        }
+        
     public void pickUpObject(int i) {
         
         if(i !=999){
@@ -158,34 +167,46 @@ public class Player extends Entity {
         BufferedImage image = null;
         switch (direction) {
             case "up":
-                if (spriteNum == 1) {
-                    image = up1;
+                if (spriteNum == 1 || spriteNum == 3){
+                    image = up0;
                 }
                 if (spriteNum == 2) {
+                    image = up1;
+                }
+                if (spriteNum == 4) {
                     image = up2;
                 }
                 break;
             case "down":
-                if (spriteNum == 1) {
-                    image = down1;
+                if (spriteNum == 1 || spriteNum == 3){
+                    image = down0;
                 }
                 if (spriteNum == 2) {
+                    image = down1;
+                }
+                if (spriteNum == 4) {
                     image = down2;
                 }
                 break;
             case "left":
-                if (spriteNum == 1) {
-                    image = left1;
+                if (spriteNum == 1 || spriteNum == 3){
+                    image = left0;
                 }
                 if (spriteNum == 2) {
+                    image = left1;
+                }
+                if (spriteNum == 4) {
                     image = left2;
                 }
                 break;
             case "right":
-                if (spriteNum == 1) {
-                    image = right1;
+                 if (spriteNum == 1 || spriteNum == 3){
+                    image = right0;
                 }
                 if (spriteNum == 2) {
+                    image = right1;
+                }
+                if (spriteNum == 4) {
                     image = right2;
                 }
                 break;
