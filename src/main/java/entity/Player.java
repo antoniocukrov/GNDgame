@@ -128,7 +128,7 @@ public class Player extends Entity {
                     spriteNum = 1;
                 }
                 spriteCounter = 0;
-                    System.out.println(spriteNum);
+                    
             }
         }
         }

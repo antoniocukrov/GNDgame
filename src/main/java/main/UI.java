@@ -26,6 +26,7 @@ public void draw(Graphics2D g2){
     g2.setFont(arial_40);
     g2.setColor(Color.white);
     g2.drawString("Has key : " + gp.player.hasKey, 50, 50);
+    
     }
 }
 
