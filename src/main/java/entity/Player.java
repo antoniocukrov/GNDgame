@@ -12,6 +12,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import main.GamePanel;
 import main.KeyHandler;
+import main.UtilityTool;
 
 /**
  *
@@ -54,25 +55,35 @@ public class Player extends Entity {
     }
 
     public void getPlayerImage() {
-        try {
-            up0 = ImageIO.read(getClass().getResourceAsStream("/player/mage_up_0.png"));
-            up1 = ImageIO.read(getClass().getResourceAsStream("/player/mage_up_1.png"));
-            up2 = ImageIO.read(getClass().getResourceAsStream("/player/mage_up_2.png"));
-            down0 = ImageIO.read(getClass().getResourceAsStream("/player/mage_down_0.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("/player/mage_down_1.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("/player/mage_down_2.png"));
-            left0 = ImageIO.read(getClass().getResourceAsStream("/player/mage_left_0.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("/player/mage_left_1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("/player/mage_left_2.png"));
-            right0 = ImageIO.read(getClass().getResourceAsStream("/player/mage_right_0.png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream("/player/mage_right_1.png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream("/player/mage_right_2.png"));
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        
+        up0 = setup("mage_up_0");
+        up1 = setup("mage_up_1");
+        up2 = setup("mage_up_2");
+        down0 = setup("mage_down_0");
+        down1 = setup("mage_down_1");
+        down2 = setup("mage_down_2");
+        left0 = setup("mage_left_0");
+        left1 = setup("mage_left_1");
+        left2 = setup("mage_left_2");
+        right0 = setup("mage_right_0");
+        right1 = setup("mage_right_1");
+        right2 = setup("mage_right_2");
     }
-
+    
+    public BufferedImage setup(String imageName) {
+        
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage image = null;
+        
+        try {
+            image = ImageIO.read(getClass().getResourceAsStream("/player/"+imageName+".png"));
+            image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
+            
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+        return image;
+    }
     public void update() {
         if (keyH.upPressed == true || keyH.downPressed == true || keyH.rightPressed == true || keyH.leftPressed == true) {
             if (keyH.upPressed == true) {
@@ -220,6 +231,6 @@ public class Player extends Entity {
                 }
                 break;
         }
-        g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+        g2.drawImage(image, screenX, screenY, null);
     }
 }
