@@ -26,19 +26,61 @@ public class TileManager {
     public TileManager(GamePanel gp) {
         this.gp = gp;
 
-        tile = new Tile[10];
+        tile = new Tile[50];
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
         getTileImage();
         loadMap();
     }
 
     public void getTileImage() {
-        setup(0, "new/grass01", false);
-        setup(1, "new/wall", true);
-        setup(2, "new/water00", true);
-        setup(3, "new/earth", false);
-        setup(4, "new/tree", true);
-        setup(5, "old/sand", false);
+        //PLACEHOLDER - Nullpoint!
+        setup(0, "new/grass00", false);
+        setup(1, "new/grass00", false);
+        setup(2, "new/grass00", false);
+        setup(3, "new/grass00", false);
+        setup(4, "new/grass00", false);
+        setup(5, "new/grass00", false);
+        setup(6, "new/grass00", false);
+        setup(7, "new/grass00", false);
+        setup(8, "new/grass00", false);
+        setup(9, "new/grass00", false);
+        //PLACEHOLDER
+        
+        setup(10, "new/grass00", false);
+        setup(11, "new/grass01", false);
+        setup(12, "new/water00", false);
+        setup(13, "new/water01", false);
+        setup(14, "new/water02", false);
+        setup(15, "new/water03", false);
+        setup(16, "new/water04", false);
+        setup(17, "new/water05", false);
+        setup(18, "new/water06", false);
+        setup(19, "new/water07", false);
+        setup(20, "new/water08", false);
+        setup(21, "new/water09", false);
+        setup(22, "new/water10", false);
+        setup(23, "new/water11", false);
+        setup(24, "new/water12", false);
+        setup(25, "new/water13", false);
+        setup(26, "new/road00", false);
+        setup(27, "new/road01", false);
+        setup(28, "new/road02", false);
+        setup(29, "new/road03", false);
+        setup(30, "new/road04", false);
+        setup(31, "new/road05", false);
+        setup(32, "new/road06", false);
+        setup(33, "new/road07", false);
+        setup(34, "new/road08", false);
+        setup(35, "new/road09", false);
+        setup(36, "new/road10", false);
+        setup(37, "new/road11", false);
+        setup(38, "new/road12", false);
+        setup(39, "new/earth", false);
+        setup(40, "new/wall", false);
+        setup(41, "new/tree", false);
+        
+        
+        
 
     }
 
@@ -57,7 +99,7 @@ public class TileManager {
     public void loadMap() {
 
         try {
-            InputStream is = getClass().getResourceAsStream("/maps/world01.txt");
+            InputStream is = getClass().getResourceAsStream("/maps/worldV2.txt");
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
             int col = 0;
             int row = 0;
