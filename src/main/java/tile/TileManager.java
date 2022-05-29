@@ -48,20 +48,20 @@ public class TileManager {
         
         setup(10, "new/grass00", false);
         setup(11, "new/grass01", false);
-        setup(12, "new/water00", false);
-        setup(13, "new/water01", false);
-        setup(14, "new/water02", false);
-        setup(15, "new/water03", false);
-        setup(16, "new/water04", false);
-        setup(17, "new/water05", false);
-        setup(18, "new/water06", false);
-        setup(19, "new/water07", false);
-        setup(20, "new/water08", false);
-        setup(21, "new/water09", false);
-        setup(22, "new/water10", false);
-        setup(23, "new/water11", false);
-        setup(24, "new/water12", false);
-        setup(25, "new/water13", false);
+        setup(12, "new/water00", true);
+        setup(13, "new/water01", true);
+        setup(14, "new/water02", true);
+        setup(15, "new/water03", true);
+        setup(16, "new/water04", true);
+        setup(17, "new/water05", true);
+        setup(18, "new/water06", true);
+        setup(19, "new/water07", true);
+        setup(20, "new/water08", true);
+        setup(21, "new/water09", true);
+        setup(22, "new/water10", true);
+        setup(23, "new/water11", true);
+        setup(24, "new/water12", true);
+        setup(25, "new/water13", true);
         setup(26, "new/road00", false);
         setup(27, "new/road01", false);
         setup(28, "new/road02", false);
@@ -76,8 +76,8 @@ public class TileManager {
         setup(37, "new/road11", false);
         setup(38, "new/road12", false);
         setup(39, "new/earth", false);
-        setup(40, "new/wall", false);
-        setup(41, "new/tree", false);
+        setup(40, "new/wall", true);
+        setup(41, "new/tree", true);
         
         
         
